@@ -2,7 +2,7 @@
 ##      set the value of a matrix (set)
 ##      get the value of the matrix (get)
 ##      set the value of the inverse matrix (setinv)
-##      get the value of the invserse matrix (getinv)
+##      get the value of the inverse matrix (getinv)
 ##  It works in conjunction with cacheSolve (below)
 
 
@@ -38,11 +38,14 @@ cacheSolve <- function(x, ...) {
     x$setinv(invmat)
     invmat
 }
-## To use this pair of functions, assign makeCacheMatrix with a matrix as a
-## parameter to a variable (e.g. bob<-makeCacheMatrix(matrix(1:4,2,2)))
-## Then call cacheSolve, giving the variable as a parameter 
-## (e.g. cacheSolve (bob))
+## To use these functions, assign makeCacheMatrix with a matrix as a parameter 
+## to a variable. Then call cacheSolve, giving the variable as a parameter.
+##      e.g.a <- matrix (1:4,2,2)
+##          mat <- makeCacheMatrix(a)
+##          mati <- cacheSolve (mat)
+##          mati
 
 ## To verify the results, you can true matrix multiply (%*%) the original 
-## matrix (bob$get()) by the inverse (cacheSolve(bob)). It should return 
-## an identity matrix (1s on the diagonal and zeros everywhere else)
+## matrix by the inverse. It should return an identity matrix 
+## (Ones on the diagonal and zeros everywhere else)
+##      e.g a %*% mati
